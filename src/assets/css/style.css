@@ -1,4 +1,21 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+html {
     margin: 0;
     padding: 0;
+    height: 100vh;
+    font-size: larger;
+    font-family: 'Kanit', sans-serif;
+}
+
+.header-name {
+    font-family: 'Rubik Broken Fax', system-ui;
+    font-size: 50px;
+}
+
+.header-desc {
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 20px;
 }

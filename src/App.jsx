@@ -14,16 +14,15 @@ const App = () =>{
   const [repo, setRepo] = useState([]);
   const [filteredUser, setFilteredUser] = useState();
 
-  // Call GITHUB API
+  // fetch gh api
   useEffect(() => {
     const githubAPI = async () => { 
-      // const res = await fetch("https://api.github.com/users/hng011/repos");
-      const res = await fetch("https://api.com");
-      // Handle any err messages
+      const res = await fetch("https://api.github.com/users/hng011/repos");
+      // handle errors
       res.status === 200 ? 
       setRepo(await res.json()) 
       : 
-      // If there's an error, dummy data will be the backup
+      // Backup data
       setRepo(data);
       console.log(`Status ${res.status}`);
     };
@@ -37,17 +36,19 @@ const App = () =>{
     setFilteredUser(repo.filter(u => (u.name.toLowerCase()).includes(val.toLowerCase())));
   };
 
-  // For searching
+  // displayed data
   const showdata = filteredUser !== undefined ? filteredUser : repo;
 
   return (
 
     repo.length === 0 ? 
-      <div>Loading...</div>
+      <div className="flex justify-center mt-[21%] mb-[29%]">
+        <span className=''>Loading....</span>
+      </div>
       
       :
 
-      <div className="flex flex-col justify-center items-center m-5 border-4 border-black-500">
+      <div className="flex flex-col justify-center align-middle items-center mt-10">
         
         <Header name="Hans" />
 
